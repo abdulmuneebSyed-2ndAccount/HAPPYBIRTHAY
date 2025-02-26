@@ -1,0 +1,417 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  overflow: hidden;
+}
+.buttonDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.button button {
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+}
+
+.button button:hover {
+  background: linear-gradient(135deg, #ff1493, #c71585);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+.container div.six {
+  top: 10vh;
+  z-index: 1;
+}
+
+.container div.seven,
+.container div.eight {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+
+.container > div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20vh;
+}
+
+.one {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.two {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: lighter;
+}
+
+.three {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.four .text-box {
+  width: min(90%, 600px);
+  margin: 0 auto;
+  border: 3px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+}
+
+.text-box p {
+  margin: 0;
+  text-align: left;
+}
+
+.text-box span {
+  visibility: hidden;
+}
+
+.text-box .fake-btn {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: #fff;
+  background-color: rgb(21, 161, 237);
+  padding: 5px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 1px;
+}
+
+.five p {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.idea-3 strong {
+  padding: 3px 5px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.five .idea-5 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
+  display: inline-block;
+}
+
+.idea-6 span {
+  font-size: clamp(8rem, 15vw, 15rem);
+}
+
+/* Video container styles */
+.six {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.six video.lydia-dp {
+  width: 400px;
+  height: 400px;
+  object-fit: cover; /* Changed to cover for better fill */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.six .hat {
+  position: absolute;
+  width: 80px;
+  top: -10px;
+  left: 60%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Balloons */
+.baloons img {
+  display: inline-block;
+  position: absolute;
+  /* width: clamp(30px, 5vw, 50px); */
+}
+
+.baloons img:nth-child(even) {
+  left: -10%;
+}
+
+.baloons img:nth-child(odd) {
+  right: -10%;
+}
+
+.baloons img:nth-child(3n + 0) {
+  left: 30%;
+}
+
+/* SVG styles */
+
+/* Birthday wish text */
+.wish-hbd {
+  font-size: clamp(2em, 5vw, 3em);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wish h5 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: lighter;
+  margin: 10px 0 0;
+}
+
+.nine p {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: lighter;
+}
+
+#replay {
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Audio control styles */
+.audio-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.audio-control:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.audio-control svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.audio-control.playing svg {
+  color: #ff69b4;
+}
+
+/* Add styles for when audio is playing */
+.audio-control.playing {
+  background: rgba(255, 105, 180, 0.8);
+}
+
+.audio-control.playing:hover {
+  background: rgba(255, 105, 180, 0.9);
+}
+
+.audio-control.playing svg {
+  color: white;
+}
+
+/* Media Queries */
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .container > div {
+    top: 15vh;
+  }
+
+  .container div.six {
+    top: 5vh;
+  }
+
+  .six .hat {
+    width: 40px;
+    top: -10px;
+    right: 10px;
+  }
+
+  .wish-hbd {
+    font-size: 2.2em;
+  }
+
+  .wish h5 {
+    font-size: 1.4rem;
+  }
+
+  .nine p {
+    font-size: 1.5rem;
+  }
+
+  .idea-5 span {
+    display: block;
+  }
+
+  .idea-6 span {
+    font-size: 10rem;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .container > div {
+    top: 12vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container > div {
+    top: 8vh;
+  }
+  .six video.lydia-dp {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.button button {
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+/* Add these new rules */
+/* .container > div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+} */
+
+.six video.lydia-dp {
+  max-width: 90vw;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.idea-6 span {
+  font-size: clamp(6rem, 12vw, 12rem);
+}
+
+@media screen and (max-width: 768px) {
+  .container > div {
+    top: 10vh !important;
+  }
+  
+  .six video.lydia-dp {
+    width: 70vw;
+    height: auto;
+  }
+  
+  .idea-6 span {
+    font-size: 8rem;
+  }
+  
+  .hat {
+    width: 15vw !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .idea-6 span {
+    font-size: 6rem;
+  }
+  
+  .button button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  .text-box {
+    width: 95% !important;
+  }
+}
